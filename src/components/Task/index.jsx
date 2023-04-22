@@ -83,7 +83,7 @@ const Task = (props) => {
 
   const onCheckbox = (id) => {
     setDone(!done)
-    const obj = { isdone :done, id1: id };
+    const obj = { isdone :!done, id1: id };
     axios.post("http://localhost:3002/updateByCheckbox", obj).catch((err) => {
       alert(JSON.stringify(err));
     });
@@ -103,6 +103,7 @@ const Task = (props) => {
           onClick={() => onCheckbox(id)}
           type="checkbox"
           title="done / no done"
+          defaultChecked={done?true:false}
         ></input>
         <span title="Delete">
           <FontAwesomeIcon
