@@ -5,6 +5,7 @@ import Edit_task from "../Edit_task";
 import Task from "../Task";
 
 const To_do_list = () => {
+
   const [toDoList, setToDoList] = useState(null);
   /* for Add_task component */
   const [newTaskDescription, setNewTaskDescription] = useState("");
@@ -43,10 +44,7 @@ const To_do_list = () => {
     axios
       .post("http://localhost:3002/addTask", newTask)
       .then(() => {
-        console.log(newTask);
-        const newList = [...toDoList];
-        newList.push(newTask);
-        setToDoList(newList);
+        setToDoList((prevToDoList) => [...prevToDoList, newTask]);
         setNewTaskDescription("");
         setBeforeSelectingLevel(true);
       })
@@ -76,6 +74,8 @@ const To_do_list = () => {
                 taskDescription={task.taskdescription}
                 priorityLevel={task.prioritylevel}
                 isDone={task.isdone}
+                setToDoList={setToDoList}
+                toDoList={toDoList}
                 onDeleteTask={onDeleteTask}
                 showEdit={showEdit}
                 setShowEdit={setShowEdit}

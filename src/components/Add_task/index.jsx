@@ -6,7 +6,7 @@ const Add_task = (props) => {
     setNewTaskDescription,
     beforeSelectingLevel,
     setBeforeSelectingLevel,
-    onAddTask 
+    onAddTask,
   } = props;
 
   return (
@@ -34,28 +34,34 @@ const Add_task = (props) => {
           <h2>Select priority level:</h2>
           <button
             // value="Low"
-            onClick={()=>onAddTask({
-              taskdescription: newTaskDescription,
-              prioritylevel: 'low',
-            })}
+            onClick={() =>
+              onAddTask({
+                taskdescription: newTaskDescription,
+                prioritylevel: "low",
+              })
+            }
           >
             Low
           </button>
           <button
             // value="Medium"
-            onClick={()=>onAddTask({
-              taskdescription: newTaskDescription,
-              prioritylevel: 'medium',
-            })}
+            onClick={() =>
+              onAddTask({
+                taskdescription: newTaskDescription,
+                prioritylevel: "medium",
+              })
+            }
           >
             Medium
           </button>
           <button
             // value="High"
-            onClick={()=>onAddTask({
-              taskdescription: newTaskDescription,
-              prioritylevel: 'high',
-            })}
+            onClick={() =>
+              onAddTask({
+                taskdescription: newTaskDescription,
+                prioritylevel: "high",
+              })
+            }
           >
             High
           </button>

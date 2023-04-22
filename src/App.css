@@ -38,6 +38,10 @@ body{
  .taskBg .taskText {
      flex: 1;
  }
+ .taskBg div {
+  margin-top: -5px;
+  margin-right: 20px;
+ }
 
  .taskBg .done .taskText{
      text-decoration: line-through;

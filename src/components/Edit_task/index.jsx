@@ -1,12 +1,17 @@
 import { faL } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
+
 const Edit_task = (props) => {
+
   document.addEventListener("click", (e) => {
     console.log(e.target);
   });
+
   const [task, setTask] = useState("");
   const [level, setLevel] = useState("");
+
   const { setShowEdit } = props;
+
   const handleChange = (event) => {
     setLevel(event.target.value);
     console.log(event.target.value);
@@ -17,7 +22,6 @@ const Edit_task = (props) => {
       <div className="col">
         <input
           className="form-control form-control-lg"
-          placeholder="task"
           value={task}
           onChange={(event) => {
             setTask(event.target.value);
