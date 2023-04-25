@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export default alert = (taskDescription,priorityLevel,id,setToDoList,index) => {
+const alertFanEdit_task = (taskDescription,priorityLevel,id,setToDoList,index) => {
     Swal.fire({
       title: "Edit This Task !",
       html:
@@ -62,3 +62,5 @@ export default alert = (taskDescription,priorityLevel,id,setToDoList,index) => {
       },
     });
   };
+
+  export default alertFanEdit_task;
