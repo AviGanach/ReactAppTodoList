@@ -38,32 +38,34 @@ const Body = () => {
 
   return (
     <div className="container d-flex flex-column gap-4">
-    {/* 3 icons above the list  */}
+      {/* 3 icons above the list  */}
       <div className="d-flex justify-content-center gap-3">
-      <Icons toDoList={toDoList} setToDoList={setToDoList}/>
+        <Icons toDoList={toDoList} setToDoList={setToDoList} />
       </div>
-
-    {/* Displays a list only when it is not empty */}
-      {toDoList.length
-        ? toDoList.map((task, index) => {
-            return (
-              <Task
-                key={task.id}
-                index={index}
-                id={task.id}
-                taskDescription={task.taskdescription}
-                priorityLevel={task.prioritylevel}
-                isDone={task.isdone}
-                setToDoList={setToDoList}
-                toDoList={toDoList}
-                onDeleteTask={onDeleteTask}
-              />
-            );
-          })
-    // Prints a message when there are no tasks
-        :<p style={{textAlign:"center"}}>No tasks to display</p>}
+  
+      {/* Displays a list only when it is not empty */}
+      {toDoList.length ? (
+        <>
+          {toDoList.map((task, index) => (
+            <Task
+              key={task.id}
+              index={index}
+              id={task.id}
+              taskDescription={task.taskdescription}
+              priorityLevel={task.prioritylevel}
+              isDone={task.isdone}
+              setToDoList={setToDoList}
+              toDoList={toDoList}
+              onDeleteTask={onDeleteTask}
+            />
+          ))}
+        </>
+      ) : (
+        <p style={{ textAlign: "center" }}>No tasks to display</p>
+      )}
     </div>
   );
+  
 };
 
 export default Body;

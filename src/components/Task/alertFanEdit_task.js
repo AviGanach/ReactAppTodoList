@@ -34,6 +34,7 @@ const alertFanEdit_task = (taskDescription,priorityLevel,id,setToDoList,index) =
           },
         })
           .then((response) => {
+            console.log(response);
             if (!response.ok) {
               throw new Error("Server update failed");
             }
@@ -55,7 +56,8 @@ const alertFanEdit_task = (taskDescription,priorityLevel,id,setToDoList,index) =
           .catch((error) => {
             Swal.fire({
               title: "Error!",
-              text: "Failed to update server",
+              text: error ,
+              // text: "Failed to update server",
               icon: "error",
             });
           });

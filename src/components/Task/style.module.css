@@ -10,14 +10,12 @@
 .taskBg div {
   display: flex;
   align-items: center;
+  margin-top: -5px;
+  margin-right: 20px;
 }
 
 .taskBg .taskText {
   flex: 1;
-}
-.taskBg div {
-  margin-top: -5px;
-  margin-right: 20px;
 }
 
 .taskBg .done .taskText {
@@ -41,14 +39,14 @@
 
 .iconWrap {
   position: absolute;
-  top: 33%;
+  top: 25%;
   transform: translate(-50%);
   right: -47px;
   width: auto;
   display: inline-block;
 }
 
-.taskBg .iconWrap span:hover {
+.taskBg .iconWrap:hover {
   color: yellow;
 }
 
@@ -58,5 +56,4 @@
     cursor: pointer;
     color: rgb(35, 166, 72);
   }
-  
 

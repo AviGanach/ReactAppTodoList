@@ -45,7 +45,6 @@ function PlusIconAlert(props) {
           <FontAwesomeIcon icon={faPlus} />
         </button>
       </div>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add task</Modal.Title>

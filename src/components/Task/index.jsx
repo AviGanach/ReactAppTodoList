@@ -4,6 +4,7 @@ import styles from "./style.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import Checkbox from "@mui/material/Checkbox";
 import propTypes from "prop-types";
 
 const Task = (props) => {
@@ -28,10 +29,9 @@ const Task = (props) => {
     });
   };
 
-  
   return (
-  /*Display Todos */
-    <div className={`col ${styles.taskBg}`} >
+    /*Display Todos */
+    <div className={`col ${styles.taskBg}`}>
       <div
         onDoubleClick={() =>
           alertFanEdit_task(
@@ -49,19 +49,19 @@ const Task = (props) => {
         {!done && <span className={styles.taskPLevel}>{priorityLevel}</span>}
       </div>
 
-    {/*Display checkbox & trash icons*/}
+      {/*Display checkbox & trash icons*/}
       <div className={styles.iconWrap}>
-        <input
-          onChange={(e) => onCheckbox(id, e)}
-          type="checkbox"
+        <Checkbox
+          checked={done}
           title="done / no done"
-          defaultChecked={done ? true : false}
-        ></input>
-        <span title="Delete">
+          onChange={(e) => onCheckbox(id, e)}
+        />
+        <span>
           <FontAwesomeIcon
+            title="Delete"
             onClick={() => onDeleteTask(id)}
             icon={faTrashCan}
-          ></FontAwesomeIcon>
+          />
         </span>
       </div>
     </div>
@@ -69,13 +69,13 @@ const Task = (props) => {
 };
 
 Task.propTypes = {
-  index:propTypes.number,
-    id: propTypes.number,
-    taskDescription: propTypes.string,
-    priorityLevel: propTypes.string,
-    setToDoList: propTypes.func,
-    isDone: propTypes.bool,
-    onDeleteTask: propTypes.func, 
+  index: propTypes.number,
+  id: propTypes.number,
+  taskDescription: propTypes.string,
+  priorityLevel: propTypes.string,
+  setToDoList: propTypes.func,
+  isDone: propTypes.bool,
+  onDeleteTask: propTypes.func,
 };
 
 export default Task;
